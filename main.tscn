@@ -1,0 +1,50 @@
+[gd_scene load_steps=11 format=3 uid="uid://dxesxeu4skljk"]
+
+[ext_resource type="Texture2D" uid="uid://cmdnckss80vnw" path="res://icon.svg" id="1_ed6dl"]
+[ext_resource type="Shader" path="res://grayscale.gdshader" id="1_er10g"]
+[ext_resource type="Script" path="res://Sprite2D.gd" id="3_gl76q"]
+[ext_resource type="Shader" uid="uid://xdaxqb5am1fb" path="res://visual_grayscale.tres" id="4_241gm"]
+[ext_resource type="Shader" path="res://cossin.gdshader" id="5_y6ued"]
+[ext_resource type="Shader" uid="uid://bd3pwn28ximxj" path="res://cossin.tres" id="6_y3l52"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0qwf5"]
+shader = ExtResource("1_er10g")
+shader_parameter/grayscaleIntesity = 0.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sfrnd"]
+shader = ExtResource("4_241gm")
+shader_parameter/Grayscale = 0.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p2q0b"]
+shader = ExtResource("5_y6ued")
+shader_parameter/amplitude = 200.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_twcal"]
+shader = ExtResource("6_y3l52")
+shader_parameter/amplitude = 100.0
+
+[node name="main" type="Node"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_0qwf5")
+position = Vector2(566, 312)
+texture = ExtResource("1_ed6dl")
+script = ExtResource("3_gl76q")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_sfrnd")
+position = Vector2(742, 307)
+texture = ExtResource("1_ed6dl")
+script = ExtResource("3_gl76q")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_p2q0b")
+position = Vector2(119, 562)
+texture = ExtResource("1_ed6dl")
+script = ExtResource("3_gl76q")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_twcal")
+position = Vector2(944, 554)
+texture = ExtResource("1_ed6dl")
+script = ExtResource("3_gl76q")
